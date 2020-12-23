@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">r781104</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/customer</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+  			<!-- 使用語言格式 -->
+ 	 	<property name="hibernate.connection.characterEncoding">UTF-8</property>
+  			<!-- 使用UTF-8 -->
+  		<mapping class="Model.companytable"/>
+  		<mapping class="Model.handle"/>
+  		<mapping class="Model.number"/>	
+    </session-factory>
+</hibernate-configuration>

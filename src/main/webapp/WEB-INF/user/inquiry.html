@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>龍冠科技</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+	
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	    <p align=center>龍冠科技維護管理系統</p>
+	  </div>
+	
+	<div data-role="main" class="ui-content" data-theme="a">		  
+	    <form action="../Con/inquiry" method="POST" name="checkall" >
+	    	<table align=center border=0 width="60%">
+	    		<tr>
+	    			<td colspan=2 align=center><h1>客戶資料查詢</h1>
+	    		<tr>
+	    			<td colspan=2><hr>	
+	    		<tr>
+	    			<td colspan=2 align=center><h5>請輸入公司電話號碼或統一編號</h5>
+	    		<tr>	
+	    			<td width="25%" align=center>公司電話:
+	    			<td width="35%"><input type="tel" name="tel" placeholder="請輸入公司電話" id="tel">
+	    		<tr>
+	    			<td align=center>統一編號:
+	    			<td><input type="text" name="number" placeholder="請輸入統一編號" id="number">
+	    		<tr>
+	    			<td colspan=2><hr>
+	    		<tr>
+	    			<td>
+	    			<td width="20%" ><input type="button" value="查詢" onClick="check()" id="button" >
+	    	
+	    	</table>
+	    	
+	    	
+	    </form>
+	  </div>
+	
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	   <table align=center width="80%">
+	    <tr>
+	    	<td align="center"><h4>統一編號:80679663</h4>
+	    	<td align="center"><h4>地址:新北市中和區圓通路369巷10號1樓</h4>
+	    	<td align="center"><a href="http://www.ryu.com.tw" style="text-decoration:none;">R Y U</a>
+	    	<input type="button" value="ＲＹＵ" onclick="location.href='http://www.ryu.com.tw'"  >  
+	   </table>
+	  </div>
+</div> 
+
+<script type="text/javascript">
+	function check(){
+		if(checkall.number.value ==""){
+		}
+		if(checkall.tel.value =="" && checkall.number.value ==""){
+			alert("請用公司電話或統一編號查詢");
+			return ;
+		}
+		if(checkall.tel.value =="" && checkall.number.value.length < 8 ){
+			alert("統一編號至少是8碼以上");
+			return ;
+		}
+		checkall.submit();
+		
+	}
+	
+	$('.number').keypress(function(e) {
+        var key = window.event ? e.keyCode : e.which;
+        if (key == 13)
+            $('button').click();
+    });
+
+    $(document).ready(function () {
+        $('#number').focus();
+    });
+
+    $('#number').keypress(function(e) {
+        if(e.which == 13) {
+            $('#button').focus().click();
+        }
+    });
+	
+    $('.tel').keypress(function(e) {
+        var key = window.event ? e.keyCode : e.which;
+        if (key == 13)
+            $('button').click();
+    });
+
+    $(document).ready(function () {
+        $('#tel').focus();
+    });
+
+    $('#tel').keypress(function(e) {
+        if(e.which == 13) {
+            $('#button').focus().click();
+        }
+    });
+</script>
+
+</body>
+</html>

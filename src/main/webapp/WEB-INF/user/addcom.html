@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>龍冠科技</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+
+<div data-role="page" id="pageone" >
+	
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	    <p align=center>龍冠科技維護管理系統user</p>
+	  </div>
+	
+	<div data-role="main" class="ui-content">		
+	    <form action="../Con/addcom" method="post" name="companyadd" >
+	    	<table align="center" border=0 >
+	    		<tr>
+	    			<td colspan=4 align=center><h1>新建客戶資料表</h1>
+	    		<tr>
+	    			<td colspan=4><hr>	
+	    		<tr>
+	    			<td width="15%" ><h5>裝機日期:</h5>
+	    			<td width="40%" ><input type="date" name="onlyday" id="onlyday" >
+	    		<tr>
+	    			<td><h5>設備型號:</h5>
+	    			<td>
+	    			<select name="its">
+	    				<option value="its-150">ITS-150</option>
+	    				<option value="its-50">ITS-50</option>
+	    				<option value="its-2002">ITS-2002</option>
+	    				<option value="its-2100">ITS-2100</option>
+	    			</select>
+	    		<tr>
+	    			<td colspan=4><hr>	
+	    		
+	    		<tr>	
+	    			<td ><h5><font color="red">*</font>公司名稱:</h5>
+	    			<td colspan=3><input type="text" name="company" >
+	    		<tr>
+	    			<td ><h5>統一編號:</h5>
+	    			<td><input type="text" name="number" id="number" >
+	    		<tr>
+	    			<td ><h5>公司電話:</h5>
+	    			<td><input type="tel" name="tel" >
+	    		<tr>
+	    			<td ><h5><font color="red">*</font>承辦人姓名:</h5>
+	    			<td><input type="text" name="undertake" >
+	    		<tr>
+	    			<td ><h5><font color="red">*</font>承辦人電話:</h5>
+	    			<td><input type="tel" name="phone" >
+	    		<tr>
+	    			<td ><h5>公司地址:</h5>
+	    			<td colspan=3><input tyep="text" name="addr" >		
+	    		<tr>
+	    			<td ><h5>備註說明:</h5>
+	    			<td colspan=3><textarea rows="4" cols="20" placeholder="裝機備註說明" name="ps"></textarea>	
+	    		<tr>
+	    			<td><input type="button" value="回首頁" onclick="location.href='../view/acc'" >
+	    			<td><input type="reset" value="清除資料">
+	    			<td><input type="button"  value="登入資料" onClick="check()">
+	    			
+	    	</table>
+	    </form>
+	  </div>
+	
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	   <table align=center width="80%">
+	    <tr>
+	    	<td align="center"><h4>統一編號:80679663</h4>
+	    	<td align="center"><h4>地址:新北市中和區圓通路369巷10號1樓</h4>
+	    	<td align="center"><a href="http://www.ryu.com.tw" style="text-decoration:none;">R Y U</a>
+	    	<input type="button" value="ＲＹＵ" onclick="location.href='http://www.ryu.com.tw'"  >  
+	   </table>
+	  </div>
+</div> 
+
+
+
+<script type="text/javascript">
+
+function check(){
+	var today=new Date();
+	var currentDateTime =today.getFullYear()+ "-" + (today.getMonth()+1) + "-" + today.getDate();
+	if(companyadd.onlyday.value==""){
+		alert("裝機日期未輸入");
+		document.getElementById('onlyday').value = currentDateTime;
+		return ;
+	}
+	if(companyadd.company.value==""){
+		alert("公司名稱不可空白");
+		return ;}
+	
+	
+	var re = /^[0-9]+$/;
+	/*
+	if(companyadd.number.value.length < 8 ){
+		alert("統一編號至少為8碼");
+		return ;}
+	if (!re.test(companyadd.number.value) ){
+ 		alert("統一編號不可空白且只能是數字");
+ 		return ;}
+	*/
+	if(companyadd.undertake.value==""){
+		alert("承辦人姓名不可空白");
+		return ;}
+	if(!re.test(companyadd.phone.value)){
+		alert("承辦電話簿可空白且只能是數字");
+		return ;}
+	companyadd.submit();
+}
+</script>
+</body>
+</html>

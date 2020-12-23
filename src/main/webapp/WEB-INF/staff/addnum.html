@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>龍冠科技</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+
+<div data-role="page" id="pageone">
+	
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	    <p align=center>龍冠科技維護管理系統</p>
+	  </div>
+	
+	<div data-role="main" class="ui-content" data-theme="a">		
+	    <form action="../Con/addok" method="post" name="addnumber">
+	    	<table align=center broder=1 width="50%">
+	    		<tr>
+	    			<td align=center colspan=2>員工帳號新增
+	    		<tr><td colspan=2><hr>	
+	    		<tr>
+	    			<td width=10% align="center"><font color="red">*</font>帳號：
+	    			<td width=20%><input type="text" name="user" >
+	    		<tr>
+	    			<td align="center"><font color="red">*</font>密碼：
+	    			<td><input type="password" name="password" >
+	    		<tr>	
+	    			<td align="center">名稱：
+	    			<td><input type="text" name="name" >
+	    		<tr>
+	    			<td align="center">電話:
+	    			<td><input type="tel" name="phone" >
+	    		<tr>
+	    			<td align="center">生日:
+	    			<td><input type="date" name="body" >
+	    		<tr><td colspan=2><hr>	
+	    		<tr>
+	    			<td width=15%><input type="reset" value="清除" >
+	    			<td width=15%><input type="button" value="新增" onClick="addnum()" >
+	    	</table>
+	    </form>
+	  </div>
+	
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	   <table align=center width="80%">
+	    <tr>
+	    	<td align="center"><h4>統一編號:80679663</h4>
+	    	<td align="center"><h4>地址:新北市中和區圓通路369巷10號1樓</h4>
+	    	<td align="center"><a href="http://www.ryu.com.tw" style="text-decoration:none;">R Y U</a>
+	    	<input type="button" value="ＲＹＵ" onclick="location.href='http://www.ryu.com.tw'"  >  
+	   </table>
+	  </div>
+</div> 
+
+<script type="text/javascript">
+function addnum(){
+	if(addnumber.user.value=="" ){
+		alert("帳號不可空白");
+		return ;
+	}
+	if(addnumber.password.value==""){
+		alert("密碼不可空白");
+		return ;
+	}
+	if(addnumber.password.value.length < 6){
+		alert("密碼不可少於6個字元");
+		return ;
+	}
+	addnumber.submit();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>龍冠科技</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+onload=function(){
+	setInterval(go, 1000);
+};
+	var x=6; //利用了全局變量來執行
+	function go(){
+		x--;
+		if(x>0){
+			document.getElementById("sp").innerHTML=x+"秒後自動跳頁"; //每次設置的x的值都不一樣了。
+		}else{
+			location.href='../view/acc';
+		}
+	}
+</script>
+
+<div data-role="page" id="pageone">
+	
+	<div data-role="header" data-position="fixed" data-tap-toggle="false"  data-theme="b">
+	    <p align=center>龍冠科技維護管理系統user</p>
+	  </div>
+	
+	<div data-role="main" class="ui-content"  data-theme="a">		
+	    <form action="" method="" name="">
+	    	<table align=center>
+	    		<tr>
+	    			<td align=center><h1>~資料建檔完成~</h1>
+	    		<tr>	
+	    			<td align=center><h3 id='sp'>5秒後自動跳頁</h3>	
+	    			<a href="../view/acc">回首頁</a>
+	    	</table>
+	    </form>
+	  </div>
+	
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false"  data-theme="b">
+	    <table align=center width="80%">
+	    <tr>
+	    	<td align="center"><h4>統一編號:80679663</h4>
+	    	<td align="center"><h4>地址:新北市中和區圓通路369巷10號1樓</h4>
+	    	<td align="center"><a href="http://www.ryu.com.tw" style="text-decoration:none;">R Y U</a>
+	    	<input type="button" value="ＲＹＵ" onclick="location.href='http://www.ryu.com.tw'"  >  
+	   </table>
+	  </div>
+</div> 
+</body>
+</html>
